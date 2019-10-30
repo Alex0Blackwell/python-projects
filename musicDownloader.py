@@ -13,11 +13,11 @@ class MyLogger(object):
         print(msg)
 
 
-def download(songURL, title):
+def download(title):
 
     outtmpl = '~/Music/' + title + '.%(ext)s'
     ydl_opts = {
-        'format': 'bestaudio/best',
+        'format': 'm4a',
         'outtmpl': outtmpl,
         'logger': MyLogger(),
     }
@@ -28,19 +28,16 @@ def download(songURL, title):
 
 def main():
 
-    file = open('songList/test.txt', 'r')
+    file = open('songList.txt', 'r')
     counter = len(file.readlines())
     file.close()
     for i in range(counter):
-        file = open('songList/test.txt', 'r')
-        line = file.readlines()[i]
+        file = open('songList.txt', 'r')
+        line = str(file.readlines()[i])[:-1]
         file.close()
 
-        title = line.split()[0]
-        URL = line.split()[1]
-
-        print(f"Downloading {title}...")
-        download(URL, title)
+        print(f"Downloading: {line}...")
+        download(line)
         print("Download complete.")
 
 
