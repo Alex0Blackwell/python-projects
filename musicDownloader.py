@@ -1,6 +1,5 @@
 # from __future__ import unicode_literals
 import youtube_dl
-import shutil
 
 
 class MyLogger(object):
@@ -14,35 +13,42 @@ class MyLogger(object):
         print(msg)
 
 
-def my_hook(d):
-    if d['status'] == 'finished':
-        print('Done downloading, now converting ...')
+# def my_hook(d):
+#     if d['status'] == 'finished':
+#         print('Done downloading, now converting ...')
 
 
 def download(songURL, title):
 
-    outtmpl = '/songs/' + title + '.%(ext)s'
+    outtmpl = '~/Music/' + title + '.%(ext)s'
     ydl_opts = {
         'format': 'bestaudio/best',
         'outtmpl': outtmpl,
-        # 'o': '/songs/%(title)s.%(ext)s',
-        # 'postprocessors': [{
-        #     'key': 'FFmpegExtractAudio',
-        #     'preferredcodec': 'mp3',
-        #     'preferredquality': '192',
-        # }],
         'logger': MyLogger(),
-        'progress_hooks': [my_hook],
+        # 'progress_hooks': [my_hook],
     }
 
-    # file = open('songList/test.txt', 'w')
-    # file.write("testing2")
-    # file.close()
-
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        # ydl.download(['https://www.youtube.com/watch?v=U1AOoHSijIk'])
-        info = ydl.extract_info(songURL, download=True)
-        return info
+        ydl.extract_info(songURL, download=True)
 
 
-download('https://www.youtube.com/watch?v=U1AOoHSijIk', 'Acid Rain')
+def main():
+
+    file = open('songList/test.txt', 'r')
+    counter = len(file.readlines())
+    file.close()
+    for i in range(counter):
+        file = open('songList/test.txt', 'r')
+        line = file.readlines()[i]
+        file.close()
+
+        title = line.split()[0]
+        URL = line.split()[1]
+
+        print(f"Downloading {title}...")
+        download(URL, title)
+        print("Download complete.")
+
+
+main()
+# download('https://www.youtube.com/watch?v=U1AOoHSijIk', 'Acid Rain')
