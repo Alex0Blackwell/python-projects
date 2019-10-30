@@ -13,11 +13,6 @@ class MyLogger(object):
         print(msg)
 
 
-# def my_hook(d):
-#     if d['status'] == 'finished':
-#         print('Done downloading, now converting ...')
-
-
 def download(songURL, title):
 
     outtmpl = '~/Music/' + title + '.%(ext)s'
@@ -25,11 +20,10 @@ def download(songURL, title):
         'format': 'bestaudio/best',
         'outtmpl': outtmpl,
         'logger': MyLogger(),
-        # 'progress_hooks': [my_hook],
     }
 
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        ydl.extract_info(songURL, download=True)
+        ydl.extract_info("ytsearch:"+title, download=True)
 
 
 def main():
@@ -51,4 +45,3 @@ def main():
 
 
 main()
-# download('https://www.youtube.com/watch?v=U1AOoHSijIk', 'Acid Rain')
