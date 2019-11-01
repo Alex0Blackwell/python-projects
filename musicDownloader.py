@@ -23,7 +23,7 @@ def download(title):
     }
 
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        ydl.extract_info("ytsearch:"+title, download=True)
+        ydl.extract_info("ytsearch:"+title+"lyrics", download=True)
 
 
 def main():
@@ -39,6 +39,10 @@ def main():
         print(f"Downloading: {line}...")
         download(line)
         print("Download complete.")
+    print(f"Finished all downloads ({i})")
+
+    file = open('songList.txt', 'r+')
+    file.truncate(0)
 
 
 main()
