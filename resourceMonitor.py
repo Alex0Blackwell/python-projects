@@ -22,8 +22,8 @@ def avgCores(allCores):
 
 
 def main():
-    screen = pygame.display.set_mode((1000, 200))
-    pygame.display.set_caption("Alex Resource Monitor")
+    screen = pygame.display.set_mode((325, 200))
+    pygame.display.set_caption("Command Prompt?")
     screen.fill((0, 0, 0))
 
     while True:
@@ -31,10 +31,13 @@ def main():
         cpuPercent = psutil.cpu_percent(interval=1, percpu=True)
 
         memText = f"Memory: {memPercent}%"
-        cpuText = f"CPU: {avgCores(cpuPercent)}%"
+        cpuText = f"CPU:    {avgCores(cpuPercent)}%"
         screen.fill((0, 0, 0))
-        screen.blit(writeText(memText), (0, 0))
-        screen.blit(writeText(cpuText), (0, 40))
+        screen.blit(writeText("C:\\Users\\Alex\\Programming\\"), (0, 0))
+        screen.blit(writeText("Hover mouse to update"), (0, 25))
+        screen.blit(writeText("C:\\Users\\Alex\\Programming\\"), (0, 60))
+        screen.blit(writeText(memText), (0, 85))
+        screen.blit(writeText(cpuText), (0, 110))
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
