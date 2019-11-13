@@ -40,7 +40,7 @@ def main():
     verbFile.close()
 
     sentence = (input("Enter a sentence and I'll tell you"
-                " the nouns and verbs!\n"))
+                "the nouns and verbs!\n"))
     wordSep = sentence.split()
     wordsClean = cleanWords(wordSep)
 
