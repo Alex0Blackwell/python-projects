@@ -89,7 +89,10 @@ Try again with a revised verb or type \"e\" to exit:\n''')
     conjdVerb = regularConj(usrPronoun, usrVerb, endType)
     endsWith = usrVerb[-2:]
 
-    if(not(isIrregular)):
+    if(not conjdVerb):
+        print(f"You entered {usrPronoun} for the pronoun you wanted to",
+              f"conjugate for.\nTurns out that's not a real pronoun...")
+    elif(not(isIrregular)):
         print(f"The verb to conjugate was {usrVerb}.\nThe pronoun to",
               f"conjugate it with was {usrPronoun}.\nSince the verb is not",
               f"irregular, and it ends with {endsWith}, the conjugated verb",
