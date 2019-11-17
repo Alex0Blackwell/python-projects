@@ -327,11 +327,11 @@ savoir
 sepouvoir
 secourir
 seduire
-s'enaller
-s'enfaire
-s'enfalloir
-s'ensortir
-s'enfuir
+s'en aller
+s'en faire
+s'en falloir
+s'en sortir
+s'en fuir
 sentir
 seoir
 servir
@@ -454,8 +454,6 @@ croitre
 croitre
 cueillir
 cuire
-
-
 debattre
 debouillir
 decevoir
@@ -707,11 +705,11 @@ savoir
 sepouvoir
 secourir
 seduire
-s'enaller
-s'enfaire
-s'enfalloir
-s'ensortir
-s'enfuir
+s'en aller
+s'en faire
+s'en falloir
+s'en sortir
+s'en fuir
 sentir
 seoir
 servir
@@ -736,8 +734,8 @@ surseoir
 survenir
 survetir
 survivre
-s'yconnaitre
-s'yprendre
+s'y connaitre
+s'y prendre
 taire
 teindre
 tenir

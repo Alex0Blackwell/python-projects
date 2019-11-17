@@ -1,29 +1,30 @@
-# def checkRegular(usrVerb):
-#     if(usrVerb in)
+def checkIrregular(verb, allVerbs):
+    res = False
+    if(verb in allVerbs):
+        res = True
+    return res
 
 
-def clean(origVerbs):
-    cleanVerbs = []
-    for i in range(len(origVerbs)):
-        verb = origVerbs[i]
-        cleanVerb = verb.replace("é" or "ê", "e")
-        cleanVerb = cleanVerb.replace(" ", "")
-        irregFile = open("irregularVerbs.txt", "a")
-        irregFile.write(f"{cleanVerb}\n")
-        irregFile.close()
-        cleanVerbs += [cleanVerb]
-        # placement = 0
-        # currentVerb = origVerbs[i]
-        # for char in origVerbs[i]:
-        #     if(char == 'é' or char == 'ê'):
-        #         currentVerb[placement] = 'e'
-        #     if(char == 'ï' or char == 'î'):
-        #         currentVerb[placement] = 'i'
-        #     if(char == ' '):
-        #         currentVerb[placement] = ''
-        #     placement += 1
-        # cleanVerbs += [currentVerb]
-    return cleanVerbs
+def checkVerbEnd(verb):
+    (ir, re, er) = False, False, False
+    end = verb[-2:]
+    if(end == 'ir'):
+        ir = True
+    elif(end == 're'):
+        re = True
+    elif(end == 'er'):
+        er = True
+    return (ir, re, er)
+
+
+def regularConj(pro, verb, end):
+    (ir, re, er) = end
+    if(ir):
+        print('verb is ir')
+    elif(re):
+        print('verb is re')
+    elif(er):
+        print('verb is er')
 
 
 def main():
@@ -31,15 +32,14 @@ def main():
     irregVerbs = irregFile.read().splitlines()
     irregFile.close()
 
-    cleanIrregs = clean(irregVerbs)
+    usrVerb = input("Enter the French verb you wish to conjugate:\n")
+    usrPronoun = input("Enter the pronoun you wish to conjugate for:\n")
 
-    print(cleanIrregs)
+    isIrregular = checkIrregular(usrVerb, irregVerbs)
+    endType = checkVerbEnd(usrVerb)
+    print(isIrregular, endType)
+    regularConj(usrPronoun, usrVerb, endType)
 
-    # usrVerb = input("Enter the French verb you wish to conjugate:\n")
-    # usrPronoun = input("Enter the pronoun you wish to conjugate for:\n")
-    # cleanVerb = clean(usrVerb)
-    # print(f"You imputted")
-    # checkRegular(usrVerb)
 
 
 main()
