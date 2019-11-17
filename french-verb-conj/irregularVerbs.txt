@@ -1,0 +1,418 @@
+    abattre
+    absoudre
+    abstenir
+    abstraire
+    accourir
+    accroitre
+    accroître
+    accueillir
+    acquérir
+    adjoindre
+    admettre
+    advenir
+    aller
+    apercevoir
+    apparaitre
+    apparaître
+    appartenir
+    apprendre
+    assaillir
+    asseoir
+    astreindre
+    atteindre
+    attenir
+    attraire
+    autodétruire
+    autodissoudre
+    avoir
+
+
+    battre
+    bienvenir
+    boire
+    bouillir
+    braire
+
+
+    ceindre
+    chauvir
+    choir
+    circoncire
+    circonscrire
+    circonvenir
+    clore
+    codétenir
+    coécrire
+    combattre
+    commettre
+    comparaitre
+    comparaître
+    complaire
+    comprendre
+    compromettre
+    concevoir
+    conclure
+    concourir
+    conduire
+    confire
+    conjoindre
+    connaitre
+    connaître
+    connoître
+    conquérir
+    consentir
+    construire
+    contenir
+    contraindre
+    contrebattre
+    contredire
+    contrefaire
+    contrevenir
+    convaincre
+    convenir
+    coproduire
+    corrompre
+    coudre
+    courir
+    couvrir
+    craindre
+    croire
+    croitre
+    croître
+    cueillir
+    cuire
+
+
+    débattre
+    débouillir
+    décevoir
+    déchoir
+    déclore
+    déconfire
+    déconstruire
+    découdre
+    découvrir
+    décrire
+    décroitre
+    décroître
+    décuire
+    dédire
+    déduire
+    défaillir
+    défaire
+    déjoindre
+    démentir
+    démettre
+    départir
+    dépeindre
+    déplaire
+    dépourvoir
+    déprendre
+    désapprendre
+    désinscrire
+    desservir
+    déteindre
+    détenir
+    détruire
+    devenir
+    dévêtir
+    devoir
+    dire
+    disconvenir
+    discourir
+    disjoindre
+    disparaitre
+    disparaître
+    dissoudre
+    distraire
+    dormir
+    douloir
+    duire
+
+
+    ébattre
+    échoir
+    éclore
+    éconduire
+    écrire
+    élire
+    émettre
+    émoudre
+    émouvoir
+    empreindre
+    enceindre
+    enclore
+    encourir
+    endormir
+    enduire
+    enfreindre
+    enfuir
+    enjoindre
+    enquérir
+    ensuivre
+    entrapercevoir
+    entremettre
+    entreprendre
+    entretenir
+    entrevoir
+    entrouvrir
+    envoyer
+    épreindre
+    éprendre
+    équivaloir
+    estre
+    éteindre
+    être
+    étreindre
+    exclure
+    extraire
+
+
+    faillir
+    faire
+    falloir
+    feindre
+    férir
+    forclore
+    foutre
+    frire
+    fuir
+
+
+    geindre
+    gésir
+
+
+    haïr
+
+
+    inclure
+    induire
+    inscrire
+    instruire
+    interdire
+    interrompre
+    intervenir
+    introduire
+
+
+    joindre
+
+
+    lire
+    luire
+
+
+    maintenir
+    malfaire
+    manuscrire
+    maudire
+    mécomprendre
+    méconnaitre
+    méconnaître
+    mécroire
+    médire
+    méfaire
+    mentir
+    méprendre
+    messeoir
+    mettre
+    moudre
+    naitre
+    naître
+    nuire
+
+
+    obtenir
+    obvenir
+    occlure
+    offrir
+    oindre
+    omettre
+    ouïr
+    ouvrir
+
+
+    paitre
+    paître
+    paraitre
+    paraître
+    parcourir
+    parfaire
+    parnuire
+    partir
+    parvenir
+    peindre
+    percevoir
+    permettre
+    plaindre
+    plaire
+    pleuvoir
+    poindre
+    poursuivre
+    pourvoir
+    pouvoir
+    prædire
+    prédire
+    prendre
+    prescrire
+    pressentir
+    prévaloir
+    prévenir
+    prévoir
+    produire
+    promettre
+    promouvoir
+    proscrire
+    provenir
+
+
+    quérir
+
+
+    rabattre
+    rasseoir
+    réadmettre
+    réapparaître
+    réapprendre
+    rebattre
+    reboire
+    rebouillir
+    recevoir
+    reclore
+    recomparaitre
+    recomparaître
+    reconduire
+    reconnaitre
+    reconnaître
+    reconnoître
+    reconquérir
+    reconstruire
+    recoudre
+    recourir
+    recouvrir
+    récrire
+    recroire
+    recroitre
+    recroître
+    recueillir
+    recuire
+    redécouvrir
+    redevenir
+    redevoir
+    redire
+    redormir
+    réduire
+    réécrire
+    réélire
+    réémettre
+    refaire
+    refuir
+    réintroduire
+    rejaillir
+    rejoindre
+    relire
+    reluire
+    remettre
+    remoudre
+    renaitre
+    renaître
+    rendormir
+    renvoyer
+    réouvrir
+    repaitre
+    repaître
+    reparaitre
+    reparaître
+    repartir
+    repeindre
+    repentir
+    repercevoir
+    repleuvoir
+    repouvoir
+    reprendre
+    reproduire
+    requérir
+    résoudre
+    ressentir
+    resservir
+    ressortir
+    ressouvenir
+    restreindre
+    reteindre
+    retenir
+    retraduire
+    retraire
+    retranscrire
+    retransmettre
+    revenir
+    revêtir
+    revivre
+    revoir
+    revouloir
+    rire
+    rompre
+    rouvrir
+
+
+    saillir
+    satisfaire
+    savoir
+    se pouvoir
+    secourir
+    séduire
+    s'en aller
+    s'en faire
+    s'en falloir
+    s'en sortir
+    s'enfuir
+    sentir
+    seoir
+    servir
+    sortir
+    soudre
+    souffrir
+    souloir
+    soumettre
+    sourire
+    souscrire
+    soustraire
+    soutenir
+    souvenir
+    subvenir
+    suffire
+    suivre
+    surconduire
+    surcuire
+    surprendre
+    surproduire
+    surseoir
+    survenir
+    survêtir
+    survivre
+    s'y connaître
+    s'y prendre
+
+
+    taire
+    teindre
+    tenir
+    traduire
+    traire
+    traluire
+    transclure
+    transcrire
+    transmettre
+    transparaitre
+    transparaître
+    tressaillir
+
+
+    vaincre
+    valoir
+    venir
+    vermoudre
+    vêtir
+    vivre
+    voir
+    vouloir
