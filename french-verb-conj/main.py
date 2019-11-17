@@ -19,52 +19,52 @@ def checkVerbEnd(verb):
 
 def regularConj(pro, verb, end):
     (ir, re, er) = end
-    verbNoEnd = verb[:-2]
+    verbChange = verb[:-2]
 
     if(pro == 'je'):
         if(ir):
-            verbNoEnd += 'is'
+            verbChange += 'is'
         elif(re):
-            verbNoEnd += 's'
+            verbChange += 's'
         elif(er):
-            verbNoEnd += 'e'
+            verbChange += 'e'
     elif(pro == 'tu'):
         if(ir):
-            verbNoEnd += 'is'
+            verbChange += 'is'
         elif(re):
-            verbNoEnd += 's'
+            verbChange += 's'
         elif(er):
-            verbNoEnd += 'es'
+            verbChange += 'es'
     elif(pro == 'il' or pro == 'elle' or pro == 'on'):
         if(ir):
-            verbNoEnd += 'it'
+            verbChange += 'it'
         elif(re):
             pass
         elif(er):
-            verbNoEnd += 'e'
+            verbChange += 'e'
     elif(pro == 'nous'):
         if(ir):
-            verbNoEnd += 'issons'
+            verbChange += 'issons'
         elif(re):
-            verbNoEnd += 'ons'
+            verbChange += 'ons'
         elif(er):
-            verbNoEnd += 'ons'
+            verbChange += 'ons'
     elif(pro == 'vous'):
         if(ir):
-            verbNoEnd += 'issez'
+            verbChange += 'issez'
         elif(re):
-            verbNoEnd += 'ez'
+            verbChange += 'ez'
         elif(er):
-            verbNoEnd += 'ez'
+            verbChange += 'ez'
     elif(pro == 'ils' or pro == 'elles'):
         if(ir):
-            verbNoEnd += 'issent'
+            verbChange += 'issent'
         elif(re):
-            verbNoEnd += 'ent'
+            verbChange += 'ent'
         elif(er):
-            verbNoEnd += 'ent'
+            verbChange += 'ent'
 
-    return verbNoEnd
+    return verbChange
 
 
 def main():
@@ -76,9 +76,20 @@ def main():
     usrPronoun = input("Enter the pronoun you wish to conjugate for:\n")
 
     isIrregular = checkIrregular(usrVerb, irregVerbs)
+    endsWith = usrVerb[-2:]
     endType = checkVerbEnd(usrVerb)
-    print(isIrregular, endType)
-    print(regularConj(usrPronoun, usrVerb, endType))
+    conjdVerb = regularConj(usrPronoun, usrVerb, endType)
+
+    if(not(isIrregular)):
+        print(f"The verb to conjugate was {usrVerb}.\nThe pronoun to",
+              f"conjugate it with was {usrPronoun}.\nSince the verb is not",
+              f"irregular, and it ends with {endsWith}, the conjugated verb",
+              f"is:\n{conjdVerb}")
+    else:
+        print(f"The verb to conjugate was {usrVerb}.\nHowever, this is an",
+              f"irregular verb and I'm only in CMPT 120\nso this seems like a",
+              f"question for the internet.")
+
 
 
 
