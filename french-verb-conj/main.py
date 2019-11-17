@@ -19,12 +19,52 @@ def checkVerbEnd(verb):
 
 def regularConj(pro, verb, end):
     (ir, re, er) = end
-    if(ir):
-        print('verb is ir')
-    elif(re):
-        print('verb is re')
-    elif(er):
-        print('verb is er')
+    verbNoEnd = verb[:-2]
+
+    if(pro == 'je'):
+        if(ir):
+            verbNoEnd += 'is'
+        elif(re):
+            verbNoEnd += 's'
+        elif(er):
+            verbNoEnd += 'e'
+    elif(pro == 'tu'):
+        if(ir):
+            verbNoEnd += 'is'
+        elif(re):
+            verbNoEnd += 's'
+        elif(er):
+            verbNoEnd += 'es'
+    elif(pro == 'il' or pro == 'elle' or pro == 'on'):
+        if(ir):
+            verbNoEnd += 'it'
+        elif(re):
+            pass
+        elif(er):
+            verbNoEnd += 'e'
+    elif(pro == 'nous'):
+        if(ir):
+            verbNoEnd += 'issons'
+        elif(re):
+            verbNoEnd += 'ons'
+        elif(er):
+            verbNoEnd += 'ons'
+    elif(pro == 'vous'):
+        if(ir):
+            verbNoEnd += 'issez'
+        elif(re):
+            verbNoEnd += 'ez'
+        elif(er):
+            verbNoEnd += 'ez'
+    elif(pro == 'ils' or pro == 'elles'):
+        if(ir):
+            verbNoEnd += 'issent'
+        elif(re):
+            verbNoEnd += 'ent'
+        elif(er):
+            verbNoEnd += 'ent'
+
+    return verbNoEnd
 
 
 def main():
@@ -38,7 +78,7 @@ def main():
     isIrregular = checkIrregular(usrVerb, irregVerbs)
     endType = checkVerbEnd(usrVerb)
     print(isIrregular, endType)
-    regularConj(usrPronoun, usrVerb, endType)
+    print(regularConj(usrPronoun, usrVerb, endType))
 
 
 
