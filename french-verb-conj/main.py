@@ -63,6 +63,8 @@ def regularConj(pro, verb, end):
             verbChange += 'ent'
         elif(er):
             verbChange += 'ent'
+    else:
+        verbChange = False
 
     return verbChange
 
@@ -75,10 +77,17 @@ def main():
     usrVerb = input("Enter the French verb you wish to conjugate:\n")
     usrPronoun = input("Enter the pronoun you wish to conjugate for:\n")
 
-    isIrregular = checkIrregular(usrVerb, irregVerbs)
-    endsWith = usrVerb[-2:]
     endType = checkVerbEnd(usrVerb)
+
+    while(endType == (False, False, False) and usrVerb != 'e'):
+        usrVerb = input(f'''You inputted {usrVerb} which ends with, {usrVerb[-2:]}
+Only verbs ending with \"-ir\", \"-er\", or \"-ir\" can be converted.
+Try again with a revised verb or type \"e\" to exit:\n''')
+        endType = checkVerbEnd(usrVerb)
+
+    isIrregular = checkIrregular(usrVerb, irregVerbs)
     conjdVerb = regularConj(usrPronoun, usrVerb, endType)
+    endsWith = usrVerb[-2:]
 
     if(not(isIrregular)):
         print(f"The verb to conjugate was {usrVerb}.\nThe pronoun to",
@@ -89,8 +98,6 @@ def main():
         print(f"The verb to conjugate was {usrVerb}.\nHowever, this is an",
               f"irregular verb and I'm only in CMPT 120\nso this seems like a",
               f"question for the internet.")
-
-
 
 
 main()
