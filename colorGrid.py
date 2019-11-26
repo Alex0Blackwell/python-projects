@@ -15,7 +15,6 @@ def squares(xMax, yMax, draw):
                 draw.rectangle((a, b, a+step, b+step), fill=dark)
 
 
-
 def main():
     height = 500
     width = 500
