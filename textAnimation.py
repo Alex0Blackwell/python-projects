@@ -3,7 +3,6 @@ import time as t
 
 
 def textAnim(sentence):
-
     c = 0
     while(c < 3):
         for i in range(len(sentence)):
