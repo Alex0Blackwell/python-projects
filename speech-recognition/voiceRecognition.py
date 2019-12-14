@@ -11,17 +11,26 @@ from win10toast import ToastNotifier
 import wavio  # Like wario but not as WAAAA
 
 
-def timer(duration):
+def timer(hour, min, sec):
     toaster = ToastNotifier()
-    duration = int(duration)  # maybe redundant
-    counter = 0
-    while(counter < duration):
+    cHour = 0
+    while(cHour < hour):
+        t.sleep(3600)  # Wait an hour
+        cHour += 1
+    cMin = 0
+    while(cMin < min):
         t.sleep(60)  # Wait a minute
-        counter += 1
-    toaster.show_toast("Timer", f"Your {duration} minute timer is up")
+        cMin += 1
+    cSec = 0
+    while(cSec < sec):
+        t.sleep(1)  # Wait a second
+        cSec += 1
+    # Once all the tjmers run down, display the message
+    toaster.show_toast("Timer", f"Your {hour} hour, {min} minute {sec} second timer is up")
 
 
 def respond(usrInput):
+    usrL = usrInput.lower()
     unknown = ["My creator doesn't know what he's doing. That's probably you isn't it?",
                "My name is GRIMMELS (I don't understand)",
                "I'm a computer program. I don't know how to respond and I have no fear."]
@@ -30,24 +39,47 @@ def respond(usrInput):
                 'what is up', 'how are ya']
     greetingRes = ["Hello. They call me Grimmels.", "Oh hello!", "Oh Hi!"
                    "Hello, my name is Grimmels but you can call me \"The Grim Reaper\"",
-                   "Hello! I love meeting new peole! I don't remember any of them..."]
+                   "Hello! I love meeting new people! I don't remember any of them..."]
 
     res = ''
     for i in range(len(greeting)):
-        if(greeting[i] in usrInput.lower()):
+        if(greeting[i] in usrL):
             res = r.choice(greetingRes)
             break
-    if("minute" in usrInput.lower()):
-        usrLst = usrInput.split()
-        numIndex = usrLst.index('minute') - 1  # get the number before minute
-        num = 0
-        if(usrLst[numIndex] == 'one'):  # 'one' is the only case like this
-            # All other numbers show numerical form eg) 22
-            num = 1
-        else:
-            num = int(usrLst[numIndex])
-        timer(num)
-    elif('grimmels' in usrInput.lower()):
+
+    if('minute' in usrL or 'second' in usrL or 'hour' in usrL):
+        # Prepare the timer
+        usrLst = []
+        hour = 0
+        min = 0
+        sec = 0
+        if('-' in usrL):
+            usrL = usrL.replace('-', ' ')
+        usrLst = usrL.split()
+
+        if('hour' in usrL):
+            numIndex = usrLst.index('hour') - 1
+            if(usrLst[numIndex] == 'one'):
+                hour = 1
+            else:
+                hour = int(usrLst[numIndex])
+        if('minute' in usrL):
+            numIndex = usrLst.index('minute') - 1  # get the number before minute
+            if(usrLst[numIndex] == 'one'):  # 'one' is the only case like this
+                # All other numbers show numerical form eg) 22
+                min = 1
+            else:
+                min = int(usrLst[numIndex])
+        if('second' in usrL):
+            numIndex = usrLst.index('second') - 1
+            if(usrLst[numIndex] == 'one'):
+                sec = 1
+            else:
+                sec = int(usrLst[numIndex])
+        print(f"Setting a {hour} hour {min} minute {sec} second timer")
+
+        timer(hour, min, sec)
+    elif('grimmels' in usrL):
         res += " I Can't believe you know my name! I must be famous!"
     else:
         res = r.choice(unknown)
