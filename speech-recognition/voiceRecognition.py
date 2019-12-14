@@ -7,7 +7,18 @@ import random as r
 import sounddevice as sd
 import speech_recognition as sr
 from scipy.io.wavfile import write
+from win10toast import ToastNotifier
 import wavio  # Like wario but not as WAAAA
+
+
+def timer(duration):
+    toaster = ToastNotifier()
+    duration = int(duration)  # maybe redundant
+    counter = 0
+    while(counter < duration):
+        t.sleep(60)  # Wait a minute
+        counter += 1
+    toaster.show_toast("Timer", f"Your {duration} minute timer is up")
 
 
 def respond(usrInput):
@@ -21,13 +32,26 @@ def respond(usrInput):
                    "Hello, my name is Grimmels but you can call me \"The Grim Reaper\"",
                    "Hello! I love meeting new peole! I don't remember any of them..."]
 
-    res = r.choice(unknown)
+    res = ''
     for i in range(len(greeting)):
         if(greeting[i] in usrInput.lower()):
             res = r.choice(greetingRes)
             break
-    if('grimmels' in usrInput.lower()):
+    if("minute" in usrInput.lower()):
+        usrLst = usrInput.split()
+        numIndex = usrLst.index('minute') - 1  # get the number before minute
+        num = 0
+        if(usrLst[numIndex] == 'one'):  # 'one' is the only case like this
+            # All other numbers show numerical form eg) 22
+            num = 1
+        else:
+            num = int(usrLst[numIndex])
+        timer(num)
+    elif('grimmels' in usrInput.lower()):
         res += " I Can't believe you know my name! I must be famous!"
+    else:
+        res = r.choice(unknown)
+
     return res
 
 
