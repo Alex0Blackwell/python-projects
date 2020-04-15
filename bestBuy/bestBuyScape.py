@@ -7,12 +7,19 @@ page = requests.get(url)
 
 soup = BeautifulSoup(page.content, 'html.parser')
 
+
 addToCartButton = soup.find_all("button", {"class": "addToCartButton"})
 disableBtn = soup.find_all("button", {"class": "disabled_1VcOk"})
 
 while(addToCartButton == disableBtn):
+    FILE = open("inStock.txt", "w+")
     print("No switches available at BestBuy :(")
-    t.sleep(120);  # refresh every 2 mins
+    FILE.write("false")
+    FILE.close()
+    t.sleep(10);  # refresh every 2 mins
 
+FILE = open("inStock.txt", "w+")
+FILE.write("true")
+FILE.close()
 print("Switches available! Go! Go! Go!")
 print("Program ended")
