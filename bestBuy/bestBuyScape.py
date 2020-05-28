@@ -16,7 +16,7 @@ while(addToCartButton == disableBtn):
     print("No switches available at BestBuy :(")
     FILE.write("false")
     FILE.close()
-    t.sleep(10);  # refresh every 2 mins
+    t.sleep(120);  # refresh every 2 mins
 
 FILE = open("inStock.txt", "w+")
 FILE.write("true")

@@ -3,18 +3,22 @@ const nodemailer = require('nodemailer');
 const fs = require('fs');
 const config = require('./config');
 
+const transporter = nodemailer.createTransport(config);
+
+let mailOptions = {
+  from: config.email, // sender address
+  to: config.to,
+  subject: 'Nintendo Switch in Stock Now!', // Subject line
+  text: 'Nintendo Switch', // plain text body
+  html: 'Go xan! It should be available <a href="https://www.bestbuy.ca/en-ca/product/nintendo-switch-console-with-neon-red-blue-joy-con/13817625">here</a>.' // html body
+};
+
+async function sendMail() {
+  let info = await transporter.sendMail(mailOptions);
+  console.log('Message sent: %s', info.messageId);
+}
 
 async function main(){
-	const transporter = nodemailer.createTransport(config);
-  var inStock = false;
-
-  let mailOptions = {
-    from: config.email, // sender address
-    to: config.to,
-    subject: 'test subject', // Subject line
-    text: 'test body', // plain text body
-    html: 'test html' // html body
-  };
 
   var interval = setInterval(function() {
     fs.readFile('inStock.txt', (err, data) => {
@@ -22,7 +26,7 @@ async function main(){
 
       console.log(data.toString());
       if(data.toString() == 'true') {
-        inStock = true;
+        sendMail();
         clearInterval(interval);
         console.log('data is true');
       }
@@ -30,12 +34,7 @@ async function main(){
         console.log('data is false');
       }
     })
-  }, 10000);
-
-  if(inStock) {
-    let info = await transporter.sendMail(mailOptions);
-    console.log('Message sent: %s', info.messageId);
-  }
+  }, 120000);  // refresh every 2 mins
 }
 
 main().catch(console.error);
